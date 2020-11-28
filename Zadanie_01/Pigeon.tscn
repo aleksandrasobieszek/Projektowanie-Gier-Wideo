@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/pigeon.png" type="Texture" id=1]
+[ext_resource path="res://Pigeon.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 23.4426, 18.1386 )
+
+[node name="Pigeon" type="KinematicBody2D"]
+position = Vector2( 510.513, 272.951 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -8.10669, 1.95813 )
+scale = Vector2( 0.097, 0.097 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -8.4733, 0.906326 )
+shape = SubResource( 1 )

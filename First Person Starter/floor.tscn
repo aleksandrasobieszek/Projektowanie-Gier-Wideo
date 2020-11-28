@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.117647, 0.435294, 0.380392, 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 5.252, 0, 0, 0, 0.076, 0, 0, 0, 4.22, -0.180769, -0.0502481, 0.142478 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
