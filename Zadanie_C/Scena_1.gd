@@ -12,3 +12,5 @@ func _on_LineEdit_text_entered(new_text):
 	$VBoxContainer/tekstGlowny.text = new_text
 	if new_text == "66": print ("TAK! Zgadłeś!")
 	
+	var liczba = 0
+	
