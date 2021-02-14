@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://wizard_assets/background_03.png" type="Texture" id=1]
+[ext_resource path="res://fonts/MagicMushroom pu.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://fonts/Coconut House.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Intro_Scene.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 40
+font_data = ExtResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_left = 0.000976563
+anchor_top = 0.00166667
+anchor_right = 1.00684
+anchor_bottom = 1.015
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.25989
+margin_right = 1.25989
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -215.0
+margin_top = 110.596
+margin_right = 215.0
+margin_bottom = 198.596
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.513726, 0.796078, 0.882353, 1 )
+text = "Wizard Tales"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -147.0
+margin_top = 310.922
+margin_right = 147.0
+margin_bottom = 401.922
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainText" type="Label" parent="VBoxContainer"]
+margin_right = 294.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 2 )
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+margin_top = 21.0
+margin_right = 294.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 3 )
+placeholder_text = "Enter Your name here"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 52.0
+margin_right = 294.0
+margin_bottom = 100.0
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.435294, 0.870588, 0.94902, 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]
