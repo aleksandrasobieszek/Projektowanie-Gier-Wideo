@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://wizard_assets/background_03.png" type="Texture" id=1]
+[ext_resource path="res://fonts/Coconut House.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Winner.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 2.67273
+margin_bottom = 2.67273
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.0
+margin_top = -57.5
+margin_right = 63.0
+margin_bottom = 57.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainText" type="Label" parent="VBoxContainer"]
+custom_fonts/font = SubResource( 3 )
+
+[node name="Button_restart" type="Button" parent="VBoxContainer"]
+margin_top = 25.0
+margin_right = 126.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 1 )
+text = "Restart"
+
+[node name="Button_credits" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 126.0
+margin_bottom = 115.0
+custom_fonts/font = SubResource( 2 )
+text = "Credits"
+[connection signal="pressed" from="VBoxContainer/Button_restart" to="." method="_on_Button_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button_credits" to="." method="_on_Button_credits_pressed"]
