@@ -4,15 +4,15 @@
 [ext_resource path="res://fonts/Coconut House.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Winner.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 35
 font_data = ExtResource( 2 )
 
@@ -49,20 +49,22 @@ __meta__ = {
 }
 
 [node name="MainText" type="Label" parent="VBoxContainer"]
-custom_fonts/font = SubResource( 3 )
+margin_right = 126.0
+margin_bottom = 21.0
+custom_fonts/font = SubResource( 1 )
 
 [node name="Button_restart" type="Button" parent="VBoxContainer"]
 margin_top = 25.0
 margin_right = 126.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Restart"
 
 [node name="Button_credits" type="Button" parent="VBoxContainer"]
 margin_top = 72.0
 margin_right = 126.0
 margin_bottom = 115.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "Credits"
 [connection signal="pressed" from="VBoxContainer/Button_restart" to="." method="_on_Button_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button_credits" to="." method="_on_Button_credits_pressed"]

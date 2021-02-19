@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
 export (int) var speed = 1200
-export (int) var jump_speed = -1800
+export (int) var jump_speed = -2000
 export (int) var gravity = 4000
 export (float, 0, 1.0) var friction = 0.1
-export (float, 0, 1.0) var acceleration = 0.25
+export (float, 0, 1.0) var acceleration = 0.5
 
 var velocity = Vector2.ZERO
 
@@ -27,4 +27,7 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = jump_speed
 		
-	
+
+
+func _on_RigidBody2D_body_entered(body):
+	get_tree().change_scene("res://Level_2.tscn")

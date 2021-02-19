@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://fonts/MagicMushroom pu.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://wizard_assets/background_03.png" type="Texture" id=2]
+[ext_resource path="res://fonts/Coconut House.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -32,3 +37,30 @@ text = "Credits"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -316.5
+margin_top = -60.2502
+margin_right = 316.5
+margin_bottom = 152.75
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 633.0
+margin_bottom = 213.0
+custom_fonts/font = SubResource( 2 )
+text = "Assets:
+Mossy Cavern by Maaot, https://maaot.itch.io/mossy-cavern?download
+2D DarkCave Assets by Maaot, https://maaot.itch.io/2d-browncave-assets
+
+Fonts:
+Magic Mushroom, https://www.dafont.com/magic-mushroom.font?back=theme
+Coconut House, https://www.dafont.com/coconut-house.font?back=theme
+
+"
